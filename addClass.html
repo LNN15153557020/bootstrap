@@ -1,0 +1,108 @@
+
+        <div class="small_title">
+            <h4>
+                <small class="text-success">添加课程</small>
+            </h4>
+        </div>
+        <form action="#" class="form-horizontal text-justify" id="myform" role="form">
+            <div class="form-group form-row">
+                <label for="classid" class="control-label col-lg-1 col-md-2 col-sm-2">课程编号
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <input type="text" class="form-control" id="classid" disabled>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <span class="text-danger text-center">自动生成,不可编辑</span>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="classname" class="col-lg-1 col-md-2 col-sm-2 control-label">课程名称
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <input type="text" id="classname" class="form-control">
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="score" class="col-lg-1 col-md-2 col-sm-2 control-label">课程学分
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="col-lg-1 col-md-1 col-sm-2">
+                    <input type="number" class="form-control" id="score">
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="hour" class="control-label col-lg-1 col-md-2 col-sm-2">课程学时
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="col-lg-1 col-md-1 col-sm-2">
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="desc" class="col-lg-1 col-md-2 col-sm-2 control-label">课程简绍
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <textarea name="Cdesc" id="desc" cols="30" rows="5" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="kind" class="col-lg-1 col-md-2 col-sm-2 col-xs-12  control-label">课程类型
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="radio radio-inline col-lg-2 col-md-2 col-sm-4 col-xs-5">
+                    <label>
+                        <input type="radio" name="kind">必修课
+                    </label>
+                </div>
+                <div class="radio radio-inline col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                    <label>
+                        <input type="radio" name="kind">选修课
+                    </label>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="department" class="control-label col-lg-1 col-md-2 col-sm-2">所属院系
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <select name="select" id="department" class="form-control">
+                        <option value="1">文学院</option>
+                        <option value="2">数软学院</option>
+                        <option value="3">物理学院</option>
+                        <option value="4">化学学院</option>
+                        <option value="5">医学院</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="zhuanye" class="col-lg-1 col-md-2 col-sm-2 control-label">所属专业
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <select name="zhuanye" id="zhuanye" class="form-control">
+                        <option value="1">软件工程</option>
+                        <option value="2">计算机科学与技术</option>
+                        <option value="3">软件外包</option>
+                        <option value="4">大数据应用</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <label for="file" class="col-lg-1 col-md-2 col-sm-2 control-label">课程封面
+                    <!-- <span>*</span> -->
+                </label>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <input type="file" id="file">
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="btn">
+                    <button class="btn btn-success">提交</button>
+                    <button class="btn btn-warning">取消</button>
+                </div>
+            </div>
+        </form>
+  
