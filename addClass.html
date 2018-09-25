@@ -1,16 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课程添加</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container">
         <div class="small_title">
             <h4>
                 <small class="text-success">添加课程</small>
             </h4>
         </div>
-        <form action="#" class="form-horizontal text-justify" id="myform" role="form">
+        <form action="http://localhost/smarty1/demo/addClass.php?{if $id != 0}id={$id}{/if}" method="POST" class="form-horizontal text-justify" id="myform" role="form">
             <div class="form-group form-row">
                 <label for="classid" class="control-label col-lg-1 col-md-2 col-sm-2">课程编号
                     <!-- <span>*</span> -->
                 </label>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <input type="text" class="form-control" id="classid" disabled>
+                    <input type="text" name="course_id" value="{$course['course_id']}" class="form-control" id="classid" disabled>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <span class="text-danger text-center">自动生成,不可编辑</span>
@@ -21,7 +35,7 @@
                     <!-- <span>*</span> -->
                 </label>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <input type="text" id="classname" class="form-control">
+                    <input type="text" name="course_name" value="{$course['course_name']}" id="classname" class="form-control">
                 </div>
             </div>
             <div class="form-group form-row">
@@ -29,7 +43,7 @@
                     <!-- <span>*</span> -->
                 </label>
                 <div class="col-lg-1 col-md-1 col-sm-2">
-                    <input type="number" class="form-control" id="score">
+                    <input type="number" name="course_score" value="{$course['course_score']}" class="form-control" id="score">
                 </div>
             </div>
             <div class="form-group form-row">
@@ -37,7 +51,7 @@
                     <!-- <span>*</span> -->
                 </label>
                 <div class="col-lg-1 col-md-1 col-sm-2">
-                    <input type="number" class="form-control">
+                    <input type="number" name="course_hour" value="{$course['course_hour']}" class="form-control">
                 </div>
             </div>
             <div class="form-group form-row">
@@ -45,7 +59,7 @@
                     <!-- <span>*</span> -->
                 </label>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <textarea name="Cdesc" id="desc" cols="30" rows="5" class="form-control"></textarea>
+                    <textarea name="course_desc" id="desc" cols="30" rows="5" class="form-control">{$course["course_desc"]}</textarea>
                 </div>
             </div>
             <div class="form-group form-row">
@@ -54,12 +68,12 @@
                 </label>
                 <div class="radio radio-inline col-lg-2 col-md-2 col-sm-4 col-xs-5">
                     <label>
-                        <input type="radio" name="kind">必修课
+                        <input type="radio" name="kind" value="required" checked {if $course["course_required"] == Y}checked{/if}>必修课
                     </label>
                 </div>
                 <div class="radio radio-inline col-lg-2 col-md-2 col-sm-4 col-xs-6">
                     <label>
-                        <input type="radio" name="kind">选修课
+                        <input type="radio" name="kind" value="public"{if $course["course_public"] == Y}checked{/if}>选修课
                     </label>
                 </div>
             </div>
@@ -68,13 +82,14 @@
                     <!-- <span>*</span> -->
                 </label>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <select name="select" id="department" class="form-control">
+                    {html_options name=academy options=$academy id=academy class="form-control" selected=$course["academy_id"]}
+                    <!-- <select name="select" id="department" class="form-control">
                         <option value="1">文学院</option>
                         <option value="2">数软学院</option>
                         <option value="3">物理学院</option>
                         <option value="4">化学学院</option>
                         <option value="5">医学院</option>
-                    </select>
+                    </select> -->
                 </div>
             </div>
             <div class="form-group form-row">
@@ -82,12 +97,13 @@
                     <!-- <span>*</span> -->
                 </label>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <select name="zhuanye" id="zhuanye" class="form-control">
+                    {html_options name=major options=$major id=major class="form-control" selected={$course["major_id"]}}
+                    <!-- <select name="zhuanye" id="zhuanye" class="form-control">
                         <option value="1">软件工程</option>
                         <option value="2">计算机科学与技术</option>
                         <option value="3">软件外包</option>
                         <option value="4">大数据应用</option>
-                    </select>
+                    </select> -->
                 </div>
             </div>
             <div class="form-group form-row">
@@ -101,8 +117,11 @@
             <div class="form-group form-row">
                 <div class="btn">
                     <button class="btn btn-success">提交</button>
-                    <button class="btn btn-warning">取消</button>
+                    <button class="btn btn-warning" type="reset">取消</button>
                 </div>
             </div>
         </form>
-  
+    </div>
+</body>
+
+</html>
